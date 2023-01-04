@@ -1,13 +1,14 @@
-thickness = 5;
-midBarWidth = 4;
+thickness = 55;
+midBarOffset = 15;
 
-cube([midBarWidth, 45, thickness]);
+gap = 35;
+clawTotal = gap + 10;
 
-translate([midBarWidth, 20, 0])
-    cube([40, 25, thickness]);
+difference() {
+    cube([15, clawTotal, thickness]);
+    translate([0, 5, 0])
+        #cube([10, gap, thickness]);
+}
 
-translate([-10, 41, 0])
-    cube([10, 4, thickness]);
-
-translate([-10, 0, 0])
-    #cube([10, 4, thickness]);
+translate([midBarOffset, clawTotal / 4, 0])
+    cube([30, clawTotal / 2, thickness]);
